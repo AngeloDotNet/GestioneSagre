@@ -1,0 +1,20 @@
+﻿version: '3.7'
+
+services:
+    gestionesagre-app:
+        container_name: gestionesagre-app
+        build:
+            context: .
+            dockerfile: app/Dockerfile
+        restart: always
+        volumes:
+            - /docker/gestionesagre/data:/app
+        ports:
+            - 5091:5001
+        networks:
+            - lan-network
+
+networks:
+    lan-network:
+        external:
+            name: docker-net
