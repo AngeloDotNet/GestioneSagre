@@ -1,0 +1,37 @@
+﻿version: '3.7'
+
+services:
+    gestionesagre-app:
+        container_name: gestionesagre-app
+        build:
+            context: .
+            dockerfile: applicazione/Dockerfile
+        restart: always
+        volumes:
+            - /docker/gestionesagre/data:/app
+        ports:
+            - 5091:5001
+        networks:
+            - lan-network
+
+    gestionesagre-db:
+        container_name: gestionesagre-db
+        build:
+            context: .
+            dockerfile: database/Dockerfile
+        restart: always
+        environment:
+            - ACCEPT_EULA=Y
+            - MSSQL_SA_PASSWORD=PASSWORD-SQLSERVER
+            - MSSQL_PID=Express
+        volumes:
+            - /docker/gestionesagre/database:/var/opt/mssql/data
+        ports:
+            - 1433:1433
+        networks:
+            - lan-network
+
+networks:
+    lan-network:
+        external:
+            name: docker-net
