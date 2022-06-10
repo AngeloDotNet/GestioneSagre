@@ -18,6 +18,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{77622AF4-E6AC-4448-9D97-834EF12BB48D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{2E2F9BE4-2BD8-4223-B232-092AC2A81DA4}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\linter.yml = .github\workflows\linter.yml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -73,6 +80,7 @@ Global
 		{48E51F33-A47A-45FF-8F02-07E4B76592BD} = {3BB91D3F-F27D-442C-BC42-83D079D518E7}
 		{F34E356C-50F9-4264-B550-A49ECDFDE0AE} = {3BB91D3F-F27D-442C-BC42-83D079D518E7}
 		{1B8531E7-9903-454E-B491-8F17899A405D} = {3BB91D3F-F27D-442C-BC42-83D079D518E7}
+		{2E2F9BE4-2BD8-4223-B232-092AC2A81DA4} = {77622AF4-E6AC-4448-9D97-834EF12BB48D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7BD5E297-2FAD-43F4-8AE4-E6BA63347487}
