@@ -7,19 +7,18 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F860949A-038
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GestioneSagre.Web", "GestioneSagre.Web", "{3BB91D3F-F27D-442C-BC42-83D079D518E7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestioneSagre.Web.Server", "src\GestioneSagre.Web\Server\GestioneSagre.Web.Server.csproj", "{48E51F33-A47A-45FF-8F02-07E4B76592BD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestioneSagre.Web.Server", "src\GestioneSagre.Web\Server\GestioneSagre.Web.Server.csproj", "{48E51F33-A47A-45FF-8F02-07E4B76592BD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestioneSagre.Web.Client", "src\GestioneSagre.Web\Client\GestioneSagre.Web.Client.csproj", "{F34E356C-50F9-4264-B550-A49ECDFDE0AE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestioneSagre.Web.Client", "src\GestioneSagre.Web\Client\GestioneSagre.Web.Client.csproj", "{F34E356C-50F9-4264-B550-A49ECDFDE0AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestioneSagre.Web.Shared", "src\GestioneSagre.Web\Shared\GestioneSagre.Web.Shared.csproj", "{1B8531E7-9903-454E-B491-8F17899A405D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestioneSagre.Web.Shared", "src\GestioneSagre.Web\Shared\GestioneSagre.Web.Shared.csproj", "{1B8531E7-9903-454E-B491-8F17899A405D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A1060EAF-BC32-4FF2-8B04-701C91471193}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {7BD5E297-2FAD-43F4-8AE4-E6BA63347487}
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|x64 = Debug|x64
@@ -66,10 +65,16 @@ Global
 		{1B8531E7-9903-454E-B491-8F17899A405D}.Release|x86.ActiveCfg = Release|Any CPU
 		{1B8531E7-9903-454E-B491-8F17899A405D}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{3BB91D3F-F27D-442C-BC42-83D079D518E7} = {F860949A-038A-488D-B66C-795CDDFF3257}
 		{48E51F33-A47A-45FF-8F02-07E4B76592BD} = {3BB91D3F-F27D-442C-BC42-83D079D518E7}
 		{F34E356C-50F9-4264-B550-A49ECDFDE0AE} = {3BB91D3F-F27D-442C-BC42-83D079D518E7}
 		{1B8531E7-9903-454E-B491-8F17899A405D} = {3BB91D3F-F27D-442C-BC42-83D079D518E7}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7BD5E297-2FAD-43F4-8AE4-E6BA63347487}
 	EndGlobalSection
 EndGlobal
