@@ -23,6 +23,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestioneSagre.Web.Client", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestioneSagre.Web.Server", "src\GestioneSagre.Web.Server\GestioneSagre.Web.Server.csproj", "{A8FA2AFB-142F-4848-A45A-5ECC9269421F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestioneSagre.Models", "src\GestioneSagre.Models\GestioneSagre.Models.csproj", "{851A7886-5497-47AC-8EA5-E8E371F7F78B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,18 @@ Global
 		{A8FA2AFB-142F-4848-A45A-5ECC9269421F}.Release|x64.Build.0 = Release|Any CPU
 		{A8FA2AFB-142F-4848-A45A-5ECC9269421F}.Release|x86.ActiveCfg = Release|Any CPU
 		{A8FA2AFB-142F-4848-A45A-5ECC9269421F}.Release|x86.Build.0 = Release|Any CPU
+		{851A7886-5497-47AC-8EA5-E8E371F7F78B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{851A7886-5497-47AC-8EA5-E8E371F7F78B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{851A7886-5497-47AC-8EA5-E8E371F7F78B}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{851A7886-5497-47AC-8EA5-E8E371F7F78B}.Debug|x64.Build.0 = Debug|Any CPU
+		{851A7886-5497-47AC-8EA5-E8E371F7F78B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{851A7886-5497-47AC-8EA5-E8E371F7F78B}.Debug|x86.Build.0 = Debug|Any CPU
+		{851A7886-5497-47AC-8EA5-E8E371F7F78B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{851A7886-5497-47AC-8EA5-E8E371F7F78B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{851A7886-5497-47AC-8EA5-E8E371F7F78B}.Release|x64.ActiveCfg = Release|Any CPU
+		{851A7886-5497-47AC-8EA5-E8E371F7F78B}.Release|x64.Build.0 = Release|Any CPU
+		{851A7886-5497-47AC-8EA5-E8E371F7F78B}.Release|x86.ActiveCfg = Release|Any CPU
+		{851A7886-5497-47AC-8EA5-E8E371F7F78B}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -78,6 +92,7 @@ Global
 		{B1B39EC2-7C37-41F5-BE49-A7669D238F37} = {F860949A-038A-488D-B66C-795CDDFF3257}
 		{2F068754-08BD-4AD4-AC3F-979D7C80C721} = {F860949A-038A-488D-B66C-795CDDFF3257}
 		{A8FA2AFB-142F-4848-A45A-5ECC9269421F} = {F860949A-038A-488D-B66C-795CDDFF3257}
+		{851A7886-5497-47AC-8EA5-E8E371F7F78B} = {F860949A-038A-488D-B66C-795CDDFF3257}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7BD5E297-2FAD-43F4-8AE4-E6BA63347487}

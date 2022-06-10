@@ -15,4 +15,8 @@
       <PackageReference Include="SequentialGuid" Version="3.0.1" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\GestioneSagre.Models\GestioneSagre.Models.csproj" />
+    </ItemGroup>
+
 </Project>
