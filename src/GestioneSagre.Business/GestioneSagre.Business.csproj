@@ -6,4 +6,9 @@
         <ImplicitUsings>enable</ImplicitUsings>
     </PropertyGroup>
 
+    <ItemGroup>
+        <ProjectReference Include="..\GestioneSagre.DataAccess\GestioneSagre.DataAccess.csproj" />
+        <ProjectReference Include="..\GestioneSagre.Models\GestioneSagre.Models.csproj" />
+    </ItemGroup>
+
 </Project>
