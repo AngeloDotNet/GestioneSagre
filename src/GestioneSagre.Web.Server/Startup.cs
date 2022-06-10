@@ -24,6 +24,12 @@ public class Startup
             });
         });
 
+        services.AddDbContextPool<GestioneSagreDbContext>(optionBuilder =>
+        {
+            string connectionString = Configuration.GetSection("ConnectionStrings").GetValue<string>("Default");
+            optionBuilder.UseSqlServer(connectionString);
+        });
+
         services.AddSwaggerGen(config =>
         {
             config.SwaggerDoc("v1", new OpenApiInfo
