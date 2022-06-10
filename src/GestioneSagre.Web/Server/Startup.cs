@@ -59,14 +59,6 @@ public class Startup
             app.UseSwagger();
             app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Gestione Sagre v1"));
         }
-        else
-        {
-            app.UseExceptionHandler(new ExceptionHandlerOptions
-            {
-                ExceptionHandlingPath = "/Error",
-                AllowStatusCode404Response = true
-            });
-        }
 
         app.UseHttpsRedirection();
         app.UseBlazorFrameworkFiles();
