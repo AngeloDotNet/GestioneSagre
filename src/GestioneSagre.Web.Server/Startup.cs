@@ -30,6 +30,8 @@ public class Startup
             optionBuilder.UseSqlServer(connectionString);
         });
 
+        services.AddTransient<IVersioneService, EfCoreVersioneService>();
+
         services.AddSwaggerGen(config =>
         {
             config.SwaggerDoc("v1", new OpenApiInfo
