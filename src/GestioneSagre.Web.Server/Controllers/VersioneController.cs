@@ -1,7 +1,4 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
-
-namespace GestioneSagre.Web.Server.Controllers;
+﻿namespace GestioneSagre.Web.Server.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
