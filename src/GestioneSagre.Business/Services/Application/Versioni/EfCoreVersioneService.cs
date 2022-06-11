@@ -1,14 +1,5 @@
-﻿using GestioneSagre.DataAccess.Models.Services.Infrastructure;
-using GestioneSagre.Models.Entities;
-using GestioneSagre.Models.Enums;
-using GestioneSagre.Models.InputModels;
-using GestioneSagre.Models.ViewModels;
-using GestioneSagre.Models.ViewModels.Versioni;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
-using SequentialGuid;
+﻿namespace GestioneSagre.Business.Services.Application.Versioni;
 
-namespace GestioneSagre.Business.Services.Application.Versioni;
 public class EfCoreVersioneService : IVersioneService
 {
     private readonly ILogger<EfCoreVersioneService> logger;
