@@ -1,7 +1,5 @@
-﻿using GestioneSagre.Models.Entities;
-using GestioneSagre.Models.Enums;
+﻿namespace GestioneSagre.Models.ViewModels.Versioni;
 
-namespace GestioneSagre.Models.ViewModels.Versioni;
 public class VersioneViewModel
 {
     public int Id { get; set; }

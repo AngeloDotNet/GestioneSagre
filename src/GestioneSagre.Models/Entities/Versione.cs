@@ -1,27 +1,24 @@
-﻿using GestioneSagre.Models.Enums;
+﻿namespace GestioneSagre.Models.Entities;
 
-namespace GestioneSagre.Models.Entities
+public class Versione
 {
-    public class Versione
+    public int Id { get; private set; }
+    public string CodiceVersione { get; private set; } = string.Empty;
+    public string TestoVersione { get; private set; } = string.Empty;
+    public VersioneStato VersioneStato { get; private set; }
+
+    public void ChangeCodiceVersione(string codiceVersione)
     {
-        public int Id { get; private set; }
-        public string CodiceVersione { get; private set; } = string.Empty;
-        public string TestoVersione { get; private set; } = string.Empty;
-        public VersioneStato VersioneStato { get; private set; }
+        CodiceVersione = codiceVersione;
+    }
 
-        public void ChangeCodiceVersione(string codiceVersione)
-        {
-            CodiceVersione = codiceVersione;
-        }
+    public void ChangeTestoVersione(string testoVersione)
+    {
+        TestoVersione = testoVersione;
+    }
 
-        public void ChangeTestoVersione(string testoVersione)
-        {
-            TestoVersione = testoVersione;
-        }
-
-        public void ChangeVersioneStato(VersioneStato versioneStato)
-        {
-            VersioneStato = versioneStato;
-        }
+    public void ChangeVersioneStato(VersioneStato versioneStato)
+    {
+        VersioneStato = versioneStato;
     }
 }
