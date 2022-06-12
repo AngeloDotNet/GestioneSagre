@@ -15,17 +15,18 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{2E2F9BE4-2BD8-4223-B232-092AC2A81DA4}"
 	ProjectSection(SolutionItems) = preProject
 		.github\workflows\linter.yml = .github\workflows\linter.yml
+		.github\workflows\publish.yml = .github\workflows\publish.yml
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestioneSagre.DataAccess", "src\GestioneSagre.DataAccess\GestioneSagre.DataAccess.csproj", "{B1B39EC2-7C37-41F5-BE49-A7669D238F37}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestioneSagre.DataAccess", "src\GestioneSagre.DataAccess\GestioneSagre.DataAccess.csproj", "{B1B39EC2-7C37-41F5-BE49-A7669D238F37}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestioneSagre.Web.Client", "src\GestioneSagre.Web.Client\GestioneSagre.Web.Client.csproj", "{2F068754-08BD-4AD4-AC3F-979D7C80C721}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestioneSagre.Web.Server", "src\GestioneSagre.Web.Server\GestioneSagre.Web.Server.csproj", "{A8FA2AFB-142F-4848-A45A-5ECC9269421F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestioneSagre.Models", "src\GestioneSagre.Models\GestioneSagre.Models.csproj", "{851A7886-5497-47AC-8EA5-E8E371F7F78B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestioneSagre.Models", "src\GestioneSagre.Models\GestioneSagre.Models.csproj", "{851A7886-5497-47AC-8EA5-E8E371F7F78B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestioneSagre.Business", "src\GestioneSagre.Business\GestioneSagre.Business.csproj", "{B3CBAA0C-2E7C-41E6-82D3-AF4C0BF3BEA1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestioneSagre.Business", "src\GestioneSagre.Business\GestioneSagre.Business.csproj", "{B3CBAA0C-2E7C-41E6-82D3-AF4C0BF3BEA1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
