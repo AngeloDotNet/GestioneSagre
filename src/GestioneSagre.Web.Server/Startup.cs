@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Server.Kestrel.Core;
+
 namespace GestioneSagre.Web.Server;
 
 public class Startup
@@ -32,6 +34,9 @@ public class Startup
 
         services.AddTransient<IVersioneService, EfCoreVersioneService>();
         services.AddTransient<IFestaService, EfCoreFestaService>();
+
+        // Options
+        services.Configure<KestrelServerOptions>(Configuration.GetSection("Kestrel"));
 
         services.AddSwaggerGen(config =>
         {
