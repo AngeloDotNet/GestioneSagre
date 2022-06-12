@@ -31,6 +31,7 @@ public class Startup
         });
 
         services.AddTransient<IVersioneService, EfCoreVersioneService>();
+        services.AddTransient<IFestaService, EfCoreFestaService>();
 
         services.AddSwaggerGen(config =>
         {
