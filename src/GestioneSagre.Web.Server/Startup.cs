@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Server.Kestrel.Core;
+
 namespace GestioneSagre.Web.Server;
 
 public class Startup
@@ -33,6 +35,9 @@ public class Startup
         services.AddTransient<IVersioneService, EfCoreVersioneService>();
         services.AddTransient<IFestaService, EfCoreFestaService>();
 
+        // Options
+        services.Configure<KestrelServerOptions>(Configuration.GetSection("Kestrel"));
+
         services.AddSwaggerGen(config =>
         {
             config.SwaggerDoc("v1", new OpenApiInfo
@@ -40,20 +45,19 @@ public class Startup
                 Title = "Gestione Sagre",
                 Version = "v1",
                 Description = "API that allows the management of festivals management",
-                // TermsOfService = new Uri("https://example.com/terms"), 
 
-                //Contact = new OpenApiContact
-                //{
-                //    Name = "Nominativo contatto",
-                //    Email = "Email contatto",
-                //    Url = new Uri("https://twitter.com/username-contatto"),
-                //},
+                Contact = new OpenApiContact
+                {
+                    Name = "Angelo Pirola",
+                    Email = "angelo@aepserver.it",
+                    Url = new Uri("https://about.me/AngeloPirola"),
+                },
 
-                // License = new OpenApiLicense
-                // {
-                //     Name = "Nome licenza API",
-                //     Url = new Uri("https://example.com/license"),
-                // }
+                License = new OpenApiLicense
+                {
+                    Name = "Licenza MIT",
+                    Url = new Uri("https://it.wikipedia.org/wiki/Licenza_MIT"),
+                }
             });
         });
     }
