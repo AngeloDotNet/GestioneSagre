@@ -7,7 +7,7 @@ public class VersioneViewModel
     public string TestoVersione { get; set; } = string.Empty;
     public VersioneStato VersioneStato { get; set; }
 
-    public static VersioneViewModel FromEntity(Versione versione)
+    public static VersioneViewModel FromEntity(VersioneEntity versione)
     {
         return new VersioneViewModel
         {

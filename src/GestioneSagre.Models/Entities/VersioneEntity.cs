@@ -1,6 +1,6 @@
 ﻿namespace GestioneSagre.Models.Entities;
 
-public class Versione
+public class VersioneEntity
 {
     public int Id { get; private set; }
     public string CodiceVersione { get; private set; } = string.Empty;

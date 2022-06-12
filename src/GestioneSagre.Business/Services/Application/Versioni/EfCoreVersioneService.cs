@@ -13,7 +13,7 @@ public class EfCoreVersioneService : IVersioneService
 
     public async Task<ListViewModel<VersioneViewModel>> GetVersioniAsync()
     {
-        IQueryable<Versione> baseQuery = dbContext.Versioni;
+        IQueryable<VersioneEntity> baseQuery = dbContext.Versioni;
         baseQuery.OrderByDescending(x => x.Id);
 
         var queryLinq = baseQuery
@@ -54,7 +54,7 @@ public class EfCoreVersioneService : IVersioneService
         string versioneGuid = await GenerateGuid();
         VersioneStato versioneStato = VersioneStato.Attiva;
 
-        Versione versione = new();
+        VersioneEntity versione = new();
 
         versione.ChangeCodiceVersione(versioneGuid);
         versione.ChangeTestoVersione(inputModel.TestoVersione);
@@ -79,7 +79,7 @@ public class EfCoreVersioneService : IVersioneService
             .Select(x => x.Id)
             .FirstOrDefaultAsync();
 
-        Versione versione = await dbContext.Versioni.FindAsync(IdVersione);
+        VersioneEntity versione = await dbContext.Versioni.FindAsync(IdVersione);
 
         versione.ChangeVersioneStato(VersioneStato.Deprecata);
         await dbContext.SaveChangesAsync();
