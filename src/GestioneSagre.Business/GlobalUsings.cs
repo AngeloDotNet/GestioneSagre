@@ -2,6 +2,7 @@
 global using GestioneSagre.Models.Entities;
 global using GestioneSagre.Models.Enums;
 global using GestioneSagre.Models.InputModels.Feste;
+global using GestioneSagre.Models.InputModels.Logo;
 global using GestioneSagre.Models.InputModels.Versioni;
 global using GestioneSagre.Models.ViewModels;
 global using GestioneSagre.Models.ViewModels.Feste;
