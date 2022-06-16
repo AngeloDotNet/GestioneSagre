@@ -1,8 +1,6 @@
 ﻿namespace GestioneSagre.Web.Server.Controllers;
 
-[ApiController]
-[Route("api/[controller]")]
-public class VersioneController : ControllerBase
+public class VersioneController : BaseController
 {
     private readonly IVersioneService versioneService;
     public VersioneController(IVersioneService versioneService)

@@ -8,6 +8,7 @@ global using GestioneSagre.Models.InputModels.Versioni;
 global using GestioneSagre.Models.ViewModels;
 global using GestioneSagre.Models.ViewModels.Feste;
 global using GestioneSagre.Models.ViewModels.Versioni;
+global using GestioneSagre.Web.Server.Controllers.Common;
 global using Microsoft.AspNetCore.Authorization;
 global using Microsoft.AspNetCore.Mvc;
 global using Microsoft.AspNetCore.Server.Kestrel.Core;
