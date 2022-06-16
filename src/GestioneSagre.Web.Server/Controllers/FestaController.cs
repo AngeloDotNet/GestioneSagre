@@ -1,8 +1,6 @@
 ﻿namespace GestioneSagre.Web.Server.Controllers;
 
-[ApiController]
-[Route("api/[controller]")]
-public class FestaController : ControllerBase
+public class FestaController : BaseController
 {
     private readonly IFestaService festaService;
     public FestaController(IFestaService festaService)

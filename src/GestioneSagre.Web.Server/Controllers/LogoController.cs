@@ -2,9 +2,7 @@
 
 namespace GestioneSagre.Web.Server.Controllers;
 
-[ApiController]
-[Route("api/[controller]")]
-public class LogoController : ControllerBase
+public class LogoController : BaseController
 {
     private readonly ILogoService logoService;
     public LogoController(ILogoService logoService)
