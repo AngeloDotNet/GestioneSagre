@@ -1,4 +1,5 @@
-﻿global using GestioneSagre.Business.Extensions;
+﻿global using System.Text.Json.Serialization;
+global using GestioneSagre.Business.Extensions;
 global using GestioneSagre.Business.Services.Application.Festa;
 global using GestioneSagre.Business.Services.Application.Versioni;
 global using GestioneSagre.DataAccess.Models.Services.Infrastructure;
@@ -13,4 +14,3 @@ global using Microsoft.AspNetCore.Authorization;
 global using Microsoft.AspNetCore.Mvc;
 global using Microsoft.AspNetCore.Server.Kestrel.Core;
 global using Microsoft.EntityFrameworkCore;
-global using Microsoft.OpenApi.Models;
