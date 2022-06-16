@@ -32,7 +32,7 @@ Clone the project
 Go to the project directory
 
 ```bash
-  cd src
+  cd src\GestioneSagre.Web.Server
 ```
 
 Build the project
