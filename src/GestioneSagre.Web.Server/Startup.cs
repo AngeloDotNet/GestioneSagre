@@ -11,16 +11,19 @@ public class Startup
 
     public void ConfigureServices(IServiceCollection services)
     {
-        services.AddControllersWithViews();
-        services.AddRazorPages();
+        services.AddControllers()
+            .AddJsonOptions(options =>
+            {
+                options.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingDefault;
+            });
 
         services.AddCors(options =>
         {
-            options.AddPolicy("CorsPolicy", builder =>
+            options.AddDefaultPolicy(builder =>
             {
-                builder.AllowAnyOrigin()
-                .AllowAnyHeader()
-                .AllowAnyMethod();
+                builder.AllowAnyOrigin();
+                builder.AllowAnyHeader();
+                builder.AllowAnyMethod();
             });
         });
 
@@ -31,34 +34,15 @@ public class Startup
         });
 
         // Services
-        services.AddConfigureServices(Configuration);
+        services.AddConfigureServices(Configuration); // Custom Extension Method
 
         // Options
         services.Configure<KestrelServerOptions>(Configuration.GetSection("Kestrel"));
 
-        services.AddSwaggerGen(config =>
-        {
-            config.SwaggerDoc("v1", new OpenApiInfo
-            {
-                Title = "Gestione Sagre",
-                Version = "v1",
-                Description = "API that allows the management of festivals management",
-
-                Contact = new OpenApiContact
-                {
-                    Name = "Angelo Pirola",
-                    Email = "angelo@aepserver.it",
-                    Url = new Uri("https://about.me/AngeloPirola"),
-                },
-
-                License = new OpenApiLicense
-                {
-                    Name = "Licenza MIT",
-                    Url = new Uri("https://it.wikipedia.org/wiki/Licenza_MIT"),
-                }
-            });
-        });
+        // Swagger
+        services.AddSwaggerServices(Configuration); // Custom Extension Method
     }
+
     public void Configure(WebApplication app)
     {
         IWebHostEnvironment env = app.Environment;
@@ -71,16 +55,12 @@ public class Startup
             app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Gestione Sagre v1"));
         }
 
-        app.UseHttpsRedirection();
+        app.UseApplicationServices(); // Custom Extension Method
+
         app.UseBlazorFrameworkFiles();
 
-        app.UseStaticFiles();
-        app.UseRouting();
-
-        app.UseCors("CorsPolicy");
         app.UseEndpoints(endpoints =>
         {
-            endpoints.MapRazorPages();
             endpoints.MapControllers();
             endpoints.MapFallbackToFile("index.html");
         });
