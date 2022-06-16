@@ -1,6 +1,3 @@
-using GestioneSagre.Business.Services.Application.Logo;
-using Microsoft.AspNetCore.Server.Kestrel.Core;
-
 namespace GestioneSagre.Web.Server;
 
 public class Startup
@@ -33,13 +30,8 @@ public class Startup
             optionBuilder.UseSqlServer(connectionString);
         });
 
-        // Services TRANSIENT
-        services.AddTransient<IVersioneService, EfCoreVersioneService>();
-        services.AddTransient<IFestaService, EfCoreFestaService>();
-        services.AddTransient<ILogoService, EfCoreLogoService>();
-
-        // Services SINGLETON
-        services.AddSingleton<IImagePersister, MagickNetImagePersister>();
+        // Services
+        services.AddConfigureServices(Configuration);
 
         // Options
         services.Configure<KestrelServerOptions>(Configuration.GetSection("Kestrel"));
