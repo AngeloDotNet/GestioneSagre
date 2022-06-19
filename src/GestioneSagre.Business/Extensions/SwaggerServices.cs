@@ -1,4 +1,6 @@
-﻿namespace GestioneSagre.Business.Extensions;
+﻿using System.Reflection;
+
+namespace GestioneSagre.Business.Extensions;
 
 public static class SwaggerServices
 {
@@ -25,6 +27,11 @@ public static class SwaggerServices
                     Url = new Uri("https://it.wikipedia.org/wiki/Licenza_MIT"),
                 }
             });
+
+            var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+            var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+
+            config.IncludeXmlComments(xmlPath);
         });
 
         return services;
