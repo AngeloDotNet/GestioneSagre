@@ -1,15 +1,28 @@
 {
-  "name": "GestioneSagre.Web",
-  "short_name": "GestioneSagre.Web",
+  "name": "App Gestione Sagre",
+  "short_name": "Gestione Sagre",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#03173d",
   "icons": [
     {
+      "src": "icon-128.png",
+      "type": "image/png",
+      "sizes": "128x128",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-256.png",
+      "type": "image/png",
+      "sizes": "256x256",
+      "purpose": "any maskable"
+    },
+    {
       "src": "icon-512.png",
       "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "512x512",
+      "purpose": "any maskable"
     }
   ]
 }
