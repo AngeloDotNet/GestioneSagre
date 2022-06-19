@@ -1,4 +1,5 @@
-﻿global using GestioneSagre.Business.Services.Application.Versioni;
+﻿global using System.Reflection;
+global using GestioneSagre.Business.Services.Application.Versioni;
 global using GestioneSagre.DataAccess.Models.Services.Infrastructure;
 global using GestioneSagre.Models.Entities;
 global using GestioneSagre.Models.Enums;

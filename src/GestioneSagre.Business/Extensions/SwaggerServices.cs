@@ -1,6 +1,4 @@
-﻿using System.Reflection;
-
-namespace GestioneSagre.Business.Extensions;
+﻿namespace GestioneSagre.Business.Extensions;
 
 public static class SwaggerServices
 {
