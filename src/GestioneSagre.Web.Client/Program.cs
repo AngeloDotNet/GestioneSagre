@@ -1,7 +1,3 @@
-using GestioneSagre.Web.Client.UI;
-using Microsoft.AspNetCore.Components.Web;
-using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
-
 namespace GestioneSagre.Web.Client;
 
 public class Program
