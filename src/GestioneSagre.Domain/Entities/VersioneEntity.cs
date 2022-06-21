@@ -1,4 +1,6 @@
-﻿namespace GestioneSagre.Models.Entities;
+﻿using GestioneSagre.Domain.Enums;
+
+namespace GestioneSagre.Domain.Entities;
 
 public class VersioneEntity
 {

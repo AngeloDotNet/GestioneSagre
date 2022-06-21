@@ -1,4 +1,4 @@
-﻿global using GestioneSagre.Models.Entities;
+﻿global using GestioneSagre.Domain.Entities;
 global using ImageMagick;
 global using Microsoft.AspNetCore.Hosting;
 global using Microsoft.AspNetCore.Http;

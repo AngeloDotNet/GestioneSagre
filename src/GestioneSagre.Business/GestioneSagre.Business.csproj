@@ -16,6 +16,7 @@
 
     <ItemGroup>
         <ProjectReference Include="..\GestioneSagre.DataAccess\GestioneSagre.DataAccess.csproj" />
+        <ProjectReference Include="..\GestioneSagre.Domain\GestioneSagre.Domain.csproj" />
         <ProjectReference Include="..\GestioneSagre.Models\GestioneSagre.Models.csproj" />
     </ItemGroup>
 
