@@ -1,4 +1,4 @@
-﻿namespace GestioneSagre.Models.Entities;
+﻿namespace GestioneSagre.Domain.Entities;
 
 public class IntestazioneEntity
 {

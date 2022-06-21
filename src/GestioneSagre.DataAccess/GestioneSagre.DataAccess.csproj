@@ -18,6 +18,7 @@
     </ItemGroup>
 
     <ItemGroup>
+        <ProjectReference Include="..\GestioneSagre.Domain\GestioneSagre.Domain.csproj" />
         <ProjectReference Include="..\GestioneSagre.Models\GestioneSagre.Models.csproj" />
     </ItemGroup>
 

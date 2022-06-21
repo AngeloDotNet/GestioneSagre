@@ -1,4 +1,4 @@
-﻿namespace GestioneSagre.Models.Enums;
+﻿namespace GestioneSagre.Domain.Enums;
 
 public enum FestaStato
 {
