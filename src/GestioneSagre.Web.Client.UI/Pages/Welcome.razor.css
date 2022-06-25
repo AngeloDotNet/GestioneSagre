@@ -1,0 +1,11 @@
+﻿.jumbotron {
+    background-image: url('/images/hero.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.testofonte {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 12px;
+    text-align: center
+}
