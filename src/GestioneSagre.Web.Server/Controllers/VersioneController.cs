@@ -8,6 +8,11 @@ public class VersioneController : BaseController
         this.versioneService = versioneService;
     }
 
+    /// <summary>
+    /// Mostra l'elenco delle versioni software
+    /// </summary>
+    /// <response code="200">Lista delle versioni software caricato con successo</response>
+    /// <response code="400">Lista delle versioni software non caricato causa errori</response>
     [AllowAnonymous]
     [HttpGet]
     public async Task<IActionResult> GetElencoFesteAsync()
@@ -29,6 +34,11 @@ public class VersioneController : BaseController
         }
     }
 
+    /// <summary>
+    /// Mostra i dettagli di una specifica versione software
+    /// </summary>
+    /// <response code="200">Dettaglio della versione software caricato con successo</response>
+    /// <response code="400">Dettaglio della versione software non caricato causa errori</response>
     [AllowAnonymous]
     [HttpGet("{codiceVersione:guid}")]
     public async Task<IActionResult> GetVersioneAsync(Guid codiceVersione)
@@ -52,6 +62,11 @@ public class VersioneController : BaseController
         }
     }
 
+    /// <summary>
+    /// Permette di creare una nuova versione software
+    /// </summary>
+    /// <response code="200">Creazione nuova versione software creata con successo</response>
+    /// <response code="400">Creazione nuova versione software non creata causa errori</response>
     [AllowAnonymous]
     [HttpPost]
     public async Task<IActionResult> CreateVersioneAsync([FromBody] VersioneCreateInputModel inputModel)
@@ -76,6 +91,11 @@ public class VersioneController : BaseController
         }
     }
 
+    /// <summary>
+    /// Permette di cancellare una nuova versione software
+    /// </summary>
+    /// <response code="200">Versione software cancellata con successo</response>
+    /// <response code="400">Versione software non cancellata causa errori</response>
     [AllowAnonymous]
     [HttpDelete]
     public async Task<IActionResult> DeleteVersioneAsync([FromBody] VersioneDeleteInputModel inputModel)
