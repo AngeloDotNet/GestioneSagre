@@ -8,6 +8,11 @@ public class FestaController : BaseController
         this.festaService = festaService;
     }
 
+    /// <summary>
+    /// Mostra l'elenco delle feste
+    /// </summary>
+    /// <response code="200">Lista delle feste caricata con successo</response>
+    /// <response code="400">Lista delle feste non caricata causa errori</response>
     [AllowAnonymous]
     [HttpGet]
     public async Task<IActionResult> GetElencoFesteAsync()
@@ -29,6 +34,11 @@ public class FestaController : BaseController
         }
     }
 
+    /// <summary>
+    /// Permette la creazione di una nuova festa
+    /// </summary>
+    /// <response code="200">Creazione di una nuova festa terminata con successo</response>
+    /// <response code="400">Creazione di una nuova festa non terminata causa errori</response>
     [AllowAnonymous]
     [HttpPost]
     public async Task<IActionResult> CreateFesta([FromBody] FestaCreateInputModel inputModel)
@@ -45,6 +55,11 @@ public class FestaController : BaseController
         }
     }
 
+    /// <summary>
+    /// Mostra il dettaglio di una festa specifica, richiamata via guid
+    /// </summary>
+    /// <response code="200">Dettaglio della festa caricato con successo</response>
+    /// <response code="400">Dettaglio della festa non caricato causa errori</response>
     [AllowAnonymous]
     [HttpGet("{guidFesta}")]
     public async Task<IActionResult> ShowFesta(string guidFesta)
@@ -61,6 +76,11 @@ public class FestaController : BaseController
         }
     }
 
+    /// <summary>
+    /// Permette la modifica di una nuova festa
+    /// </summary>
+    /// <response code="200">Modifica della festa terminata con successo</response>
+    /// <response code="400">Modifica della festa non terminata causa errori</response>
     [AllowAnonymous]
     [HttpPut]
     public async Task<IActionResult> ModifyFesta([FromBody] FestaEditInputModel inputModel)
@@ -77,6 +97,11 @@ public class FestaController : BaseController
         }
     }
 
+    /// <summary>
+    /// Permette la cancellazione di una nuova festa
+    /// </summary>
+    /// <response code="200">Cancellazione della festa terminata con successo</response>
+    /// <response code="400">Cancellazione della festa non terminata causa errori</response>
     [AllowAnonymous]
     [HttpDelete]
     public async Task<IActionResult> DeleteFesta([FromBody] FestaDeleteInputModel inputModel)
