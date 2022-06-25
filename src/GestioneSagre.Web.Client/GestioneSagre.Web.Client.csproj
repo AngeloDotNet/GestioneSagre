@@ -25,4 +25,8 @@
         <BlazorWebAssemblyLazyLoad Include="GestioneSagre.Web.Client.UI.dll" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="wwwroot\images\" />
+    </ItemGroup>
+
 </Project>
