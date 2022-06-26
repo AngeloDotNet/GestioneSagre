@@ -29,18 +29,22 @@ public class Startup
 
         services.AddDbContextPool<GestioneSagreDbContext>(optionBuilder =>
         {
-            string connectionString = Configuration.GetSection("ConnectionStrings").GetValue<string>("Default");
-            optionBuilder.UseSqlServer(connectionString);
+            var maxRetryCount = Configuration.GetSection("Database").GetValue<int>("maxRetryCount");
+            var maxRetryDelay = TimeSpan.FromSeconds(Configuration.GetSection("Database").GetValue<double>("maxRetryDelay"));
+
+            var connectionString = Configuration.GetSection("ConnectionStrings").GetValue<string>("Default");
+            optionBuilder.UseSqlServer(connectionString, options =>
+            {
+                options.EnableRetryOnFailure(maxRetryCount, maxRetryDelay, null);
+            });
         });
 
-        // Services
-        services.AddConfigureServices(Configuration); // Custom Extension Method
+        // Services - Custom Extension Method
+        services.AddConfigureServices(Configuration);
+        services.AddSwaggerServices(Configuration);
 
         // Options
         services.Configure<KestrelServerOptions>(Configuration.GetSection("Kestrel"));
-
-        // Swagger
-        services.AddSwaggerServices(Configuration); // Custom Extension Method
     }
 
     public void Configure(WebApplication app)
