@@ -1,4 +1,6 @@
-﻿namespace GestioneSagre.Business.Services.Application.Logo;
+﻿using GestioneSagre.DataAccess.Models.Services.Interfaces;
+
+namespace GestioneSagre.Business.Services.Application.Logo;
 public class EfCoreLogoService : ILogoService
 {
     private readonly ILogger<EfCoreLogoService> logger;

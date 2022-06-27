@@ -12,6 +12,7 @@ public static class ConfigureServices
 
         // Services SINGLETON
         services.AddSingleton<IImagePersister, MagickNetImagePersister>();
+        services.AddSingleton<ITransactionLogger, LocalTransactionLogger>();
 
         return services;
     }

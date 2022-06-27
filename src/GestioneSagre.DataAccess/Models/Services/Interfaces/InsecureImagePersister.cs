@@ -1,4 +1,4 @@
-﻿namespace GestioneSagre.DataAccess.Models.Services.Infrastructure;
+﻿namespace GestioneSagre.DataAccess.Models.Services.Interfaces;
 
 public class InsecureImagePersister : IImagePersister
 {
@@ -11,9 +11,9 @@ public class InsecureImagePersister : IImagePersister
 
     public async Task<string> SaveLogoAsync(int festaId, IFormFile formFile)
     {
-        string path = $"/images/festa-{festaId}.jpg";
-        string physicalPath = Path.Combine(env.WebRootPath, "images", $"festa-{festaId}.jpg");
-        using FileStream fileStream = File.OpenWrite(physicalPath);
+        var path = $"/images/festa-{festaId}.jpg";
+        var physicalPath = Path.Combine(env.WebRootPath, "images", $"festa-{festaId}.jpg");
+        using var fileStream = File.OpenWrite(physicalPath);
 
         await formFile.CopyToAsync(fileStream);
 

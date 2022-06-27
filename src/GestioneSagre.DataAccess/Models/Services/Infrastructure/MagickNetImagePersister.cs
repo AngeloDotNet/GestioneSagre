@@ -1,4 +1,5 @@
 ﻿namespace GestioneSagre.DataAccess.Models.Services.Infrastructure;
+
 public class MagickNetImagePersister : IImagePersister
 {
     private readonly IHostingEnvironment env;
