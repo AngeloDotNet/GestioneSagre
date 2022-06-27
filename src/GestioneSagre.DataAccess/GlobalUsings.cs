@@ -1,5 +1,10 @@
-﻿global using GestioneSagre.Domain.Entities;
+﻿global using GestioneSagre.DataAccess.Models.Services.Interfaces;
+global using GestioneSagre.Domain.Entities;
+global using GestioneSagre.Models.InputModels.Feste;
+global using GestioneSagre.Models.InputModels.Logo;
+global using GestioneSagre.Models.InputModels.Versioni;
 global using ImageMagick;
 global using Microsoft.AspNetCore.Hosting;
 global using Microsoft.AspNetCore.Http;
 global using Microsoft.EntityFrameworkCore;
+global using Microsoft.Extensions.Hosting;
