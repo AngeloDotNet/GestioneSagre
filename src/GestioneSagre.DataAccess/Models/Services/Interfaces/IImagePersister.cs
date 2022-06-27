@@ -1,4 +1,4 @@
-﻿namespace GestioneSagre.DataAccess.Models.Services.Infrastructure;
+﻿namespace GestioneSagre.DataAccess.Models.Services.Interfaces;
 
 public interface IImagePersister
 {

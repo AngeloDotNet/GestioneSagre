@@ -1,6 +1,7 @@
 ﻿global using System.Reflection;
 global using GestioneSagre.Business.Services.Application.Versioni;
 global using GestioneSagre.DataAccess.Models.Services.Infrastructure;
+global using GestioneSagre.DataAccess.Models.Services.Interfaces;
 global using GestioneSagre.Domain.Entities;
 global using GestioneSagre.Domain.Enums;
 global using GestioneSagre.Models.InputModels.Feste;
