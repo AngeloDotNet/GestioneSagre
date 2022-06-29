@@ -1,9 +1,9 @@
-﻿namespace GestioneSagre.Web.Server.Controllers;
+﻿namespace GestioneSagre.Web.PrivateAPI.Controllers;
 
 public class VersioneController : BaseController
 {
-    private readonly IVersioneService versioneService;
-    public VersioneController(IVersioneService versioneService)
+    private readonly IVersioneServicePrivate versioneService;
+    public VersioneController(IVersioneServicePrivate versioneService)
     {
         this.versioneService = versioneService;
     }
@@ -45,7 +45,7 @@ public class VersioneController : BaseController
     {
         try
         {
-            string codice = codiceVersione.ToString();
+            var codice = codiceVersione.ToString();
 
             VersioneViewModel versione = await versioneService.GetVersioneAsync(codice);
 

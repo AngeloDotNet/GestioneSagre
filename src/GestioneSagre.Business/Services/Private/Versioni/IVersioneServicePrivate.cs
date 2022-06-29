@@ -1,6 +1,6 @@
-﻿namespace GestioneSagre.Business.Services.Application.Versioni;
+﻿namespace GestioneSagre.Business.Services.Private.Versioni;
 
-public interface IVersioneService
+public interface IVersioneServicePrivate
 {
     Task<ListViewModel<VersioneViewModel>> GetVersioniAsync();
     Task<VersioneViewModel> GetVersioneAsync(string CodiceVersione);

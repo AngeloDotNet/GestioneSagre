@@ -5,7 +5,7 @@ public static class ConfigureServices
     public static IServiceCollection AddConfigureServices(this IServiceCollection services, IConfiguration configuration)
     {
         // Services TRANSIENT
-        services.Scan(scan => scan.FromAssemblyOf<EfCoreVersioneService>()
+        services.Scan(scan => scan.FromAssemblyOf<EfCoreFestaService>()
             .AddClasses(classes => classes.Where(type => type.Name.EndsWith("Service")))
             .AsImplementedInterfaces()
             .WithTransientLifetime());
@@ -19,6 +19,11 @@ public static class ConfigureServices
 
     public static IServiceCollection AddConfigPrivateServices(this IServiceCollection services, IConfiguration configuration)
     {
+        // Services TRANSIENT
+        services.Scan(scan => scan.FromAssemblyOf<EfCoreVersioneServicePrivate>()
+            .AddClasses(classes => classes.Where(type => type.Name.EndsWith("ServicePrivate")))
+            .AsImplementedInterfaces()
+            .WithTransientLifetime());
 
         return services;
     }

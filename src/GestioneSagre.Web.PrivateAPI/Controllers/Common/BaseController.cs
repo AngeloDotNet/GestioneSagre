@@ -1,4 +1,4 @@
-﻿namespace GestioneSagre.Web.Server.Controllers.Common;
+﻿namespace GestioneSagre.Web.PrivateAPI.Controllers.Common;
 
 [ApiController]
 [Route("api/[controller]")]

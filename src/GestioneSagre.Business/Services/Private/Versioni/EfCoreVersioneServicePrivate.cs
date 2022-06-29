@@ -1,11 +1,11 @@
-﻿namespace GestioneSagre.Business.Services.Application.Versioni;
+﻿namespace GestioneSagre.Business.Services.Private.Versioni;
 
-public class EfCoreVersioneService : IVersioneService
+public class EfCoreVersioneServicePrivate : IVersioneServicePrivate
 {
-    private readonly ILogger<EfCoreVersioneService> logger;
+    private readonly ILogger<EfCoreVersioneServicePrivate> logger;
     private readonly GestioneSagreDbContext dbContext;
 
-    public EfCoreVersioneService(ILogger<EfCoreVersioneService> logger, GestioneSagreDbContext dbContext)
+    public EfCoreVersioneServicePrivate(ILogger<EfCoreVersioneServicePrivate> logger, GestioneSagreDbContext dbContext)
     {
         this.logger = logger;
         this.dbContext = dbContext;
@@ -19,18 +19,16 @@ public class EfCoreVersioneService : IVersioneService
         var queryLinq = baseQuery
             .AsNoTracking();
 
-        var feste = await queryLinq
-            .Where(x => x.VersioneStato != VersioneStato.Attiva && x.VersioneStato != VersioneStato.Deprecata)
+        var versioni = await queryLinq
             .Select(x => VersioneViewModel.FromEntity(x))
             .ToListAsync();
 
         var totalCount = await queryLinq
-            .Where(x => x.VersioneStato != VersioneStato.Attiva && x.VersioneStato != VersioneStato.Deprecata)
             .CountAsync();
 
         ListViewModel<VersioneViewModel> result = new()
         {
-            Results = feste,
+            Results = versioni,
             TotalCount = totalCount
         };
 
@@ -51,8 +49,8 @@ public class EfCoreVersioneService : IVersioneService
 
     public async Task<VersioneDetailViewModel> CreateVersioneAsync(VersioneCreateInputModel inputModel)
     {
-        string versioneGuid = await GenerateGuid();
-        VersioneStato versioneStato = VersioneStato.Attiva;
+        var versioneGuid = await GenerateGuid();
+        var versioneStato = VersioneStato.Attiva;
 
         VersioneEntity versione = new();
 
@@ -68,18 +66,18 @@ public class EfCoreVersioneService : IVersioneService
 
     public async Task<bool> IsVersioneAvailableAsync(string testoVersione, int id)
     {
-        bool versioneExists = await dbContext.Versioni.AnyAsync(x => EF.Functions.Like(x.TestoVersione, testoVersione) && x.Id != id);
+        var versioneExists = await dbContext.Versioni.AnyAsync(x => EF.Functions.Like(x.TestoVersione, testoVersione) && x.Id != id);
         return !versioneExists;
     }
 
     public async Task DeleteVersioneAsync(VersioneDeleteInputModel inputModel)
     {
-        int IdVersione = await dbContext.Versioni
+        var IdVersione = await dbContext.Versioni
             .Where(x => x.CodiceVersione == inputModel.CodiceVersione)
             .Select(x => x.Id)
             .FirstOrDefaultAsync();
 
-        VersioneEntity versione = await dbContext.Versioni.FindAsync(IdVersione);
+        var versione = await dbContext.Versioni.FindAsync(IdVersione);
 
         versione.ChangeVersioneStato(VersioneStato.Deprecata);
         await dbContext.SaveChangesAsync();
