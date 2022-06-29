@@ -16,4 +16,10 @@ public static class ConfigureServices
 
         return services;
     }
+
+    public static IServiceCollection AddConfigPrivateServices(this IServiceCollection services, IConfiguration configuration)
+    {
+
+        return services;
+    }
 }

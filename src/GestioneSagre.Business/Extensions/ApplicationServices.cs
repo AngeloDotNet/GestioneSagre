@@ -13,4 +13,16 @@ public static class ApplicationServices
 
         return app;
     }
+
+    public static IApplicationBuilder UseAppPrivateServices(this IApplicationBuilder app)
+    {
+        app.UseHttpsRedirection();
+
+        app.UseStaticFiles();
+        app.UseRouting();
+
+        app.UseCors();
+
+        return app;
+    }
 }
