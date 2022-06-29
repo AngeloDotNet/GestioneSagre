@@ -1,59 +1,57 @@
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using Microsoft.OpenApi.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+namespace GestioneSagre.Web.PrivateAPI;
 
-namespace GestioneSagre.Web.PrivateAPI
+public class Startup
 {
-    public class Startup
+    public Startup(IConfiguration configuration)
     {
-        public Startup(IConfiguration configuration)
-        {
-            Configuration = configuration;
-        }
+        Configuration = configuration;
+    }
 
-        public IConfiguration Configuration { get; }
+    public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
-        public void ConfigureServices(IServiceCollection services)
-        {
+    public void ConfigureServices(IServiceCollection services)
+    {
 
-            services.AddControllers();
-            services.AddSwaggerGen(c =>
+        services.AddControllers()
+            .AddJsonOptions(options =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "GestioneSagre.Web.PrivateAPI", Version = "v1" });
+                options.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingDefault;
             });
-        }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        services.AddCors(options =>
         {
-            if (env.IsDevelopment())
+            options.AddDefaultPolicy(builder =>
             {
-                app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "GestioneSagre.Web.PrivateAPI v1"));
-            }
-
-            app.UseHttpsRedirection();
-
-            app.UseRouting();
-
-            app.UseAuthorization();
-
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
+                builder.AllowAnyOrigin();
+                builder.AllowAnyHeader();
+                builder.AllowAnyMethod();
             });
+        });
+
+        // Services - Custom Extension Method
+        services.AddConfigPrivateServices(Configuration);
+        services.AddSwaggerServices(Configuration);
+
+        // Options
+        services.Configure<KestrelServerOptions>(Configuration.GetSection("Kestrel"));
+    }
+
+    // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+    public void Configure(WebApplication app)
+    {
+        IWebHostEnvironment env = app.Environment;
+
+        if (env.IsDevelopment())
+        {
+            app.UseSwagger();
+            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Gestione Sagre v1"));
         }
+
+        app.UseAppPrivateServices(); // Custom Extension Method
+
+        app.UseEndpoints(endpoints =>
+        {
+            endpoints.MapControllers();
+        });
     }
 }
