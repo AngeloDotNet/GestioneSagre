@@ -28,6 +28,18 @@ public class Startup
             });
         });
 
+        services.AddDbContextPool<GestioneSagreDbContext>(optionBuilder =>
+        {
+            var maxRetryCount = Configuration.GetSection("Database").GetValue<int>("maxRetryCount");
+            var maxRetryDelay = TimeSpan.FromSeconds(Configuration.GetSection("Database").GetValue<double>("maxRetryDelay"));
+
+            var connectionString = Configuration.GetSection("ConnectionStrings").GetValue<string>("Default");
+            optionBuilder.UseSqlServer(connectionString, options =>
+            {
+                options.EnableRetryOnFailure(maxRetryCount, maxRetryDelay, null);
+            });
+        });
+
         // Services - Custom Extension Method
         services.AddConfigPrivateServices(Configuration);
         services.AddSwaggerServices(Configuration);
