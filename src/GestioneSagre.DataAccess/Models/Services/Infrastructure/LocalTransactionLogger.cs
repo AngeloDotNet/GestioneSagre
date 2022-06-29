@@ -2,10 +2,10 @@
 
 public class LocalTransactionLogger : ITransactionLogger
 {
-    private readonly IHostEnvironment env;
+    private readonly IHostingEnvironment env;
     private readonly SemaphoreSlim semaphore = new SemaphoreSlim(1);
 
-    public LocalTransactionLogger(IHostEnvironment env)
+    public LocalTransactionLogger(IHostingEnvironment env)
     {
         this.env = env;
     }
