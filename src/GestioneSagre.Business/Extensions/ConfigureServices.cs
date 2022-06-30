@@ -2,7 +2,7 @@
 
 public static class ConfigureServices
 {
-    public static IServiceCollection AddConfigureServices(this IServiceCollection services, IConfiguration configuration)
+    public static IServiceCollection AddPublicServices(this IServiceCollection services, IConfiguration configuration)
     {
         // Services TRANSIENT
         services.Scan(scan => scan.FromAssemblyOf<EfCoreFestaService>()
@@ -17,7 +17,7 @@ public static class ConfigureServices
         return services;
     }
 
-    public static IServiceCollection AddConfigPrivateServices(this IServiceCollection services, IConfiguration configuration)
+    public static IServiceCollection AddPrivateServices(this IServiceCollection services, IConfiguration configuration)
     {
         // Services TRANSIENT
         services.Scan(scan => scan.FromAssemblyOf<EfCoreVersioneServicePrivate>()
