@@ -40,7 +40,7 @@ public class Startup
         });
 
         // Services - Custom Extension Method
-        services.AddConfigureServices(Configuration);
+        services.AddPublicServices(Configuration);
         services.AddSwaggerServices(Configuration);
 
         // Options
