@@ -54,7 +54,14 @@ public class Startup
         if (env.IsDevelopment())
         {
             app.UseWebAssemblyDebugging();
+            //app.UseSwagger();
+            //app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Gestione Sagre v1"));
+        }
 
+        var enableSwagger = Configuration.GetSection("Swagger").GetValue<bool>("enabled");
+
+        if (enableSwagger)
+        {
             app.UseSwagger();
             app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Gestione Sagre v1"));
         }

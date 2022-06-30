@@ -17,7 +17,6 @@
     <ItemGroup>
         <ProjectReference Include="..\GestioneSagre.Business\GestioneSagre.Business.csproj" />
         <ProjectReference Include="..\GestioneSagre.DataAccess\GestioneSagre.DataAccess.csproj" />
-        <ProjectReference Include="..\GestioneSagre.Web.Client\GestioneSagre.Web.Client.csproj" />
     </ItemGroup>
 
 </Project>
