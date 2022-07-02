@@ -1,8 +1,8 @@
 ﻿namespace GestioneSagre.Models.ViewModels.Feste;
 
-public class FestaDetailViewModel
+public class FestaDetailViewModel : BaseViewModel
 {
-    public int Id { get; set; }
+    //public int Id { get; set; }
     public string DataInizio { get; set; }
     public string DataFine { get; set; }
     public string GuidFesta { get; set; }
