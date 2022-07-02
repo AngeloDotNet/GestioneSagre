@@ -1,13 +1,13 @@
 ﻿namespace GestioneSagre.Models.ViewModels.Intestazioni;
 
-public class IntestazioneViewModel
+public class IntestazioneViewModel : BaseViewModel
 {
-    public int Id { get; private set; }
-    public int FestaId { get; private set; }
-    public string Titolo { get; private set; }
-    public string Edizione { get; private set; }
-    public string Luogo { get; private set; }
-    public string Logo { get; private set; }
+    //public int Id { get; set; }
+    public int FestaId { get; set; }
+    public string Titolo { get; set; }
+    public string Edizione { get; set; }
+    public string Luogo { get; set; }
+    public string Logo { get; set; }
 
     public static IntestazioneViewModel FromEntity(IntestazioneEntity entity)
     {
