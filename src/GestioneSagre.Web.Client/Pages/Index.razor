@@ -1,5 +1,17 @@
 ﻿@page "/"
+@using GestioneSagre.Web.Client.UI.Pages
 
-@using GestioneSagre.Web.Client.UI.Pages;
+@inject IVersioneService versioneService
 
-<Welcome />
+<Welcome versione="@Testo" />
+
+@code {
+    private string Testo = string.Empty;
+
+    protected override async Task OnInitializedAsync()
+    {
+        VersioneViewModel testoVersione = await versioneService.GetVersione();
+
+        Testo = testoVersione.TestoVersione.ToString();
+    }
+}

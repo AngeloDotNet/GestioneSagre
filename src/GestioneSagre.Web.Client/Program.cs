@@ -10,6 +10,12 @@ public class Program
 
         builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 
+        // Services SCOPED
+        builder.Services.Scan(scan => scan.FromAssemblyOf<VersioneService>()
+             .AddClasses(classes => classes.Where(type => type.Name.EndsWith("Service")))
+             .AsImplementedInterfaces()
+             .WithScopedLifetime());
+
         await builder.Build().RunAsync();
     }
 }

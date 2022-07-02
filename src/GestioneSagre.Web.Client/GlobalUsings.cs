@@ -1,4 +1,6 @@
 ﻿global using System.Reflection;
+global using GestioneSagre.Models.ViewModels.Versioni;
+global using GestioneSagre.Web.Client.Services.Versioni;
 global using GestioneSagre.Web.Client.Shared;
 global using Microsoft.AspNetCore.Components;
 global using Microsoft.AspNetCore.Components.Routing;
