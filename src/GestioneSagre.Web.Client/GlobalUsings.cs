@@ -1,4 +1,5 @@
 ﻿global using System.Reflection;
+global using BlazorKit.Spinners;
 global using GestioneSagre.Models.ViewModels.Versioni;
 global using GestioneSagre.Web.Client.Services.Versioni;
 global using GestioneSagre.Web.Client.Shared;

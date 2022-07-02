@@ -8,10 +8,28 @@
 @code {
     private string Testo = string.Empty;
 
+    private bool hasError = false;
+    private bool isLoading = true;
+
+    private SpinnerTemplate Spinner { get; set; } = SpinnerTemplate.Loader1;
+
     protected override async Task OnInitializedAsync()
     {
-        VersioneViewModel testoVersione = await versioneService.GetVersione();
+        isLoading = true;
+        await Task.Delay(1000);
 
-        Testo = testoVersione.TestoVersione.ToString();
+        try
+        {
+            VersioneViewModel testoVersione = await versioneService.GetVersione();
+            Testo = testoVersione.TestoVersione.ToString();
+        }
+        catch(Exception)
+        {
+            hasError = true;
+        }
+        finally
+        {
+            isLoading = false;
+        }
     }
 }
