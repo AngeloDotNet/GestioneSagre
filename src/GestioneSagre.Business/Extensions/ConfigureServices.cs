@@ -1,4 +1,6 @@
-﻿namespace GestioneSagre.Business.Extensions;
+﻿using GestioneSagre.Business.Services.Private.SendEmail;
+
+namespace GestioneSagre.Business.Extensions;
 
 public static class ConfigureServices
 {
@@ -22,6 +24,17 @@ public static class ConfigureServices
         // Services TRANSIENT
         services.Scan(scan => scan.FromAssemblyOf<EfCoreVersioneServicePrivate>()
             .AddClasses(classes => classes.Where(type => type.Name.EndsWith("ServicePrivate")))
+            .AsImplementedInterfaces()
+            .WithTransientLifetime());
+
+        return services;
+    }
+
+    public static IServiceCollection AddPrivateSenders(this IServiceCollection services, IConfiguration configuration)
+    {
+        //Services TRANSIENT
+        services.Scan(scan => scan.FromAssemblyOf<MailKitEmailSender>()
+            .AddClasses(classes => classes.Where(type => type.Name.EndsWith("Sender")))
             .AsImplementedInterfaces()
             .WithTransientLifetime());
 
