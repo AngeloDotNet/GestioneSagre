@@ -18,6 +18,8 @@ public class EmailController : BaseController
     /// <response code="400">Email non inviata causa errori</response>
     [AllowAnonymous]
     [HttpPost("InvioEmail")]
+    [ProducesResponseType(typeof(InputMailSender), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<IActionResult> InvioEmail([FromForm] InputMailSender model)
     {
         try
