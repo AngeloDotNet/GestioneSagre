@@ -30,26 +30,22 @@
     <div class="row">
         <div class="col-md-8">
             <div class="form-group mb-3">
-                <label for="expenseTitle">Nominativo Mittente</label>
-                <InputText id="MittenteNominativo" @bind-Value="model.MittenteNominativo" class="form-control" />
+                <MudTextField @bind-Value="model.MittenteNominativo" Label="Nominativo" Variant="Variant.Outlined" />
                 <ValidationMessage For="@(() => model.MittenteNominativo)" />
             </div>
 
             <div class="form-group mb-3">
-                <label for="expenseTitle">Email Mittente</label>
-                <InputText id="MittenteEmail" @bind-Value="model.MittenteEmail" class="form-control" />
+                <MudTextField @bind-Value="model.MittenteEmail" Label="Indirizzo Email" Variant="Variant.Outlined" />
                 <ValidationMessage For="@(() => model.MittenteEmail)" />
             </div>
 
             <div class="form-group mb-3">
-                <label for="expenseTitle">Oggetto</label>
-                <InputText id="Oggetto" @bind-Value="model.Oggetto" text="Richiesta di supporto" class="form-control" disabled />
+                <MudTextField @bind-Value="model.Oggetto" Label="Oggetto" Testo="Richiesta di supporto" ReadOnly="true" Disabled="true" Variant="Variant.Outlined" />
                 @*<ValidationMessage For="@(() => model.Oggetto)" />*@
             </div>
 
             <div class="form-group mb-3">
-                <label for="expenseTitle">Messaggio</label>
-                <InputTextArea id="Messaggio" @bind-Value="model.Messaggio" class="form-control" />
+                <MudTextField @bind-Value="model.Messaggio" Label="Messaggio" Lines="5" Variant="Variant.Outlined" />
                 <ValidationMessage For="@(() => model.Messaggio)" />
             </div>
         </div>
