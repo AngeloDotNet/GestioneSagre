@@ -13,16 +13,19 @@
 <h1>Richiesta di supporto</h1>
 <div class="testo"><br /></div>
 
-<div class="alert alert-warning" role="alert">
-  <b>ATTENZIONE:</b> Per inviare la richiesta di supporto, &egrave; necessaria una connessione ad internet attiva.
-</div>
+<MudAlert Severity="Severity.Warning" Dense="true">
+    <b>ATTENZIONE:</b> Per inviare la richiesta di supporto, &egrave; necessaria una connessione ad internet attiva.
+</MudAlert>
 
 <div class="testo"><br /></div>
 <AlertMessage tipoAlert="@typeAlert" testo="@textAlert"></AlertMessage>
 
 <div class="testo"><br /></div>
 <EditForm Model="@model" OnValidSubmit="Submit">
-    <DataAnnotationsValidator />
+    <div class="row">
+        <div class="col-md-8"><DataAnnotationsValidator />
+        <ValidationSummary /></div>
+    </div>
 
     <div class="row">
         <div class="col-md-8">
