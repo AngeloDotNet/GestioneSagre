@@ -20,11 +20,11 @@ public class EmailController : BaseController
     [HttpPost("InvioEmail")]
     [ProducesResponseType(typeof(InputMailSender), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<IActionResult> InvioEmail([FromForm] InputMailSender model)
+    public async Task<IActionResult> InvioEmail(InputMailSender model)
     {
         try
         {
-            await emailService.SendEmailAsync(model);
+            await emailService.SendEmailSupportAsync(model);
             return Ok();
         }
         catch (Exception ex)

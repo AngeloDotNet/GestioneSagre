@@ -2,11 +2,11 @@
 
 public class InputMailSender
 {
-    public string recipientEmail { get; set; }
+    public string MittenteNominativo { get; set; }
 
-    public string subject { get; set; }
+    public string MittenteEmail { get; set; }
 
-    public string htmlMessage { get; set; }
+    public string Oggetto { get; set; }
 
-    //public List<IFormFile> attachments { get; set; }
+    public string Messaggio { get; set; }
 }

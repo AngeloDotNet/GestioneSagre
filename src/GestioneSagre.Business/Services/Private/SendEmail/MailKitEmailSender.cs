@@ -11,7 +11,7 @@ public class MailKitEmailSender : IEmailSenderService
         this.smtpOptionsMonitor = smtpOptionsMonitor;
     }
 
-    public async Task SendEmailAsync(InputMailSender model)
+    public async Task SendEmailSupportAsync(InputMailSender model)
     {
         try
         {
@@ -28,39 +28,21 @@ public class MailKitEmailSender : IEmailSenderService
 
             MimeMessage message = new();
 
-            message.From.Add(MailboxAddress.Parse(options.Sender));
-            message.To.Add(MailboxAddress.Parse(model.recipientEmail));
-            message.Subject = model.subject;
+            message.From.Add(MailboxAddress.Parse($"{model.MittenteNominativo} <{model.MittenteEmail}>"));
+            message.To.Add(MailboxAddress.Parse(options.Support));
+            message.Subject = model.Oggetto;
 
             var builder = new BodyBuilder();
 
-            //if (model.attachments != null)
-            //{
-            //    byte[] fileBytes;
-            //    foreach (var file in model.attachments)
-            //    {
-            //        if (file.Length > 0)
-            //        {
-            //            using (var ms = new MemoryStream())
-            //            {
-            //                file.CopyTo(ms);
-            //                fileBytes = ms.ToArray();
-            //            }
-
-            //            builder.Attachments.Add(file.FileName, fileBytes, ContentType.Parse(file.ContentType));
-            //        }
-            //    }
-            //}
-
-            builder.HtmlBody = model.htmlMessage;
+            builder.HtmlBody = model.Messaggio;
             message.Body = builder.ToMessageBody();
 
             await client.SendAsync(message);
             await client.DisconnectAsync(true);
         }
-        catch
+        catch (Exception ex)
         {
-            throw new Exception();
+            throw new Exception(ex.Message);
         }
     }
 }

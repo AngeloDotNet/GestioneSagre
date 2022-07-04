@@ -1,0 +1,59 @@
+﻿@page "/help/supporto"
+@inject ISupportoService supportoService
+
+<PageTitle>Gestione Sagre</PageTitle>
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home Page</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Help / Richiesta di Supporto</li>
+    </ol>
+</nav>
+
+<h1>Richiesta di supporto</h1>
+<div class="testo"><br /></div>
+
+<div class="alert alert-warning" role="alert">
+  <b>ATTENZIONE:</b> Per inviare la richiesta di supporto, &egrave; necessaria una connessione ad internet attiva.
+</div>
+
+<div class="testo"><br /></div>
+<AlertMessage tipoAlert="@typeAlert" testo="@textAlert"></AlertMessage>
+
+<div class="testo"><br /></div>
+<EditForm Model="@model" OnValidSubmit="Submit">
+    <DataAnnotationsValidator />
+
+    <div class="row">
+        <div class="col-md-8">
+            <div class="form-group mb-3">
+                <label for="expenseTitle">Nominativo Mittente</label>
+                <InputText id="MittenteNominativo" @bind-Value="model.MittenteNominativo" class="form-control" />
+                <ValidationMessage For="@(() => model.MittenteNominativo)" />
+            </div>
+
+            <div class="form-group mb-3">
+                <label for="expenseTitle">Email Mittente</label>
+                <InputText id="MittenteEmail" @bind-Value="model.MittenteEmail" class="form-control" />
+                <ValidationMessage For="@(() => model.MittenteEmail)" />
+            </div>
+
+            <div class="form-group mb-3">
+                <label for="expenseTitle">Oggetto</label>
+                <InputText id="Oggetto" @bind-Value="model.Oggetto" text="Richiesta di supporto" class="form-control" disabled />
+                @*<ValidationMessage For="@(() => model.Oggetto)" />*@
+            </div>
+
+            <div class="form-group mb-3">
+                <label for="expenseTitle">Messaggio</label>
+                <InputTextArea id="Messaggio" @bind-Value="model.Messaggio" class="form-control" />
+                <ValidationMessage For="@(() => model.Messaggio)" />
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group mt-3">
+        <button type="submit" class="btn btn-outline-primary">Invia richiesta</button>
+        <button type="button" class="btn btn-outline-secondary" @onclick="Cancel">Annulla</button>
+    </div>
+</EditForm>

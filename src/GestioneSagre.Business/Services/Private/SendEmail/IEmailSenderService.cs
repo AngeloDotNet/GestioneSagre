@@ -2,5 +2,5 @@
 
 public interface IEmailSenderService
 {
-    Task SendEmailAsync(InputMailSender model);
+    Task SendEmailSupportAsync(InputMailSender model);
 }
