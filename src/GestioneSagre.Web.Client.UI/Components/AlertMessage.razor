@@ -1,13 +1,15 @@
-﻿@if (!string.IsNullOrWhiteSpace(tipoAlert))
+﻿@inject ISnackbar Snackbar
+
+@if (!string.IsNullOrWhiteSpace(tipoAlert))
 {
     @switch (tipoAlert)
     {
         case "error":
-            <div class="alert alert-danger" role="alert">@testo</div>
+            Snackbar.Add($"{testo}", Severity.Error);
             break;
 
         case "confirm":
-            <div class="alert alert-success" role="alert">@testo</div>
+            Snackbar.Add($"{testo}", Severity.Success);
             break;
     }
 }
