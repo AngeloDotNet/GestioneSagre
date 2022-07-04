@@ -15,6 +15,8 @@ public class VersioneController : BaseController
     /// <response code="400">Lista delle versioni software non caricato causa errori</response>
     [AllowAnonymous]
     [HttpGet]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<IActionResult> GetElencoFesteAsync()
     {
         try
@@ -41,6 +43,8 @@ public class VersioneController : BaseController
     /// <response code="400">Dettaglio della versione software non caricato causa errori</response>
     [AllowAnonymous]
     [HttpGet("{codiceVersione:guid}")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<IActionResult> GetVersioneAsync(Guid codiceVersione)
     {
         try
@@ -69,6 +73,8 @@ public class VersioneController : BaseController
     /// <response code="400">Creazione nuova versione software non creata causa errori</response>
     [AllowAnonymous]
     [HttpPost]
+    [ProducesResponseType(typeof(VersioneCreateInputModel), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<IActionResult> CreateVersioneAsync([FromBody] VersioneCreateInputModel inputModel)
     {
         try
@@ -98,6 +104,8 @@ public class VersioneController : BaseController
     /// <response code="400">Versione software non cancellata causa errori</response>
     [AllowAnonymous]
     [HttpDelete]
+    [ProducesResponseType(typeof(VersioneDeleteInputModel), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<IActionResult> DeleteVersioneAsync([FromBody] VersioneDeleteInputModel inputModel)
     {
         try

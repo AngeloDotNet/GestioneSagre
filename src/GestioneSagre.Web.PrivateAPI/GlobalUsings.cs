@@ -1,8 +1,11 @@
 ﻿global using System.Net.Mime;
 global using System.Text.Json.Serialization;
 global using GestioneSagre.Business.Extensions;
+global using GestioneSagre.Business.Services.Private.SendEmail;
 global using GestioneSagre.Business.Services.Private.Versioni;
 global using GestioneSagre.DataAccess.Models.Services.Infrastructure;
+global using GestioneSagre.Domain.Options;
+global using GestioneSagre.Models.InputModels.InvioEmail;
 global using GestioneSagre.Models.InputModels.Versioni;
 global using GestioneSagre.Models.ViewModels;
 global using GestioneSagre.Models.ViewModels.Versioni;

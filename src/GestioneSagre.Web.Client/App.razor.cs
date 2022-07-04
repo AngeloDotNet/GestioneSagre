@@ -23,22 +23,13 @@ public class AppBase : ComponentBase, IDisposable
                 //        break;
                 //    }
 
-                //case "counter":
-                //    {
-                //        var assemblies = await AssemblyLoader.LoadAssembliesAsync(new List<string>
-                //        {
-                //            "GestioneSagre.Web.Client.Counter.dll"
-                //        });
-                //        LazyLoadedAssemblies.AddRange(assemblies);
-                //        break;
-                //    }
-
                 default:
                     {
                         var assemblies = await AssemblyLoader.LoadAssembliesAsync(new List<string>
                         {
                             "GestioneSagre.Web.Client.UI.dll"
                         });
+
                         LazyLoadedAssemblies.AddRange(assemblies);
                         break;
                     }

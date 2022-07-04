@@ -1,0 +1,18 @@
+﻿@if (!string.IsNullOrWhiteSpace(tipoAlert))
+{
+    @switch (tipoAlert)
+    {
+        case "error":
+            <div class="alert alert-danger" role="alert">@testo</div>
+            break;
+
+        case "confirm":
+            <div class="alert alert-success" role="alert">@testo</div>
+            break;
+    }
+}
+
+@code {
+    [Parameter] public string tipoAlert { get; set; }
+    [Parameter] public string testo { get; set; }
+}

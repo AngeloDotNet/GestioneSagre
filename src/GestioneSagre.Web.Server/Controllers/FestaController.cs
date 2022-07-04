@@ -15,6 +15,8 @@ public class FestaController : BaseController
     /// <response code="400">Lista delle feste non caricata causa errori</response>
     [AllowAnonymous]
     [HttpGet]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<IActionResult> GetElencoFesteAsync()
     {
         try
@@ -41,6 +43,8 @@ public class FestaController : BaseController
     /// <response code="400">Creazione di una nuova festa non terminata causa errori</response>
     [AllowAnonymous]
     [HttpPost]
+    [ProducesResponseType(typeof(FestaCreateInputModel), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<IActionResult> CreateFesta([FromBody] FestaCreateInputModel inputModel)
     {
         try
@@ -62,6 +66,8 @@ public class FestaController : BaseController
     /// <response code="400">Dettaglio della festa non caricato causa errori</response>
     [AllowAnonymous]
     [HttpGet("{guidFesta}")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<IActionResult> ShowFesta(string guidFesta)
     {
         try
@@ -83,6 +89,8 @@ public class FestaController : BaseController
     /// <response code="400">Modifica della festa non terminata causa errori</response>
     [AllowAnonymous]
     [HttpPut]
+    [ProducesResponseType(typeof(FestaEditInputModel), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<IActionResult> ModifyFesta([FromBody] FestaEditInputModel inputModel)
     {
         try
@@ -104,6 +112,8 @@ public class FestaController : BaseController
     /// <response code="400">Cancellazione della festa non terminata causa errori</response>
     [AllowAnonymous]
     [HttpDelete]
+    [ProducesResponseType(typeof(FestaDeleteInputModel), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<IActionResult> DeleteFesta([FromBody] FestaDeleteInputModel inputModel)
     {
         try

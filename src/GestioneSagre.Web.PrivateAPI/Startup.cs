@@ -43,21 +43,16 @@ public class Startup
         // Services - Custom Extension Method
         services.AddPrivateServices(Configuration);
         services.AddSwaggerServices(Configuration);
+        services.AddPrivateSenders(Configuration);
 
         // Options
         services.Configure<KestrelServerOptions>(Configuration.GetSection("Kestrel"));
+        services.Configure<SmtpOptions>(Configuration.GetSection("Smtp"));
     }
 
-    // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
     public void Configure(WebApplication app)
     {
         IWebHostEnvironment env = app.Environment;
-
-        //if (env.IsDevelopment())
-        //{
-        //    app.UseSwagger();
-        //    app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Gestione Sagre v1"));
-        //}
 
         var enableSwagger = Configuration.GetSection("Swagger").GetValue<bool>("enabled");
 
