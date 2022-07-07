@@ -2,6 +2,7 @@
 global using System.Text.Json.Serialization;
 global using GestioneSagre.Business.Extensions;
 global using GestioneSagre.Business.Services.Application.Festa;
+global using GestioneSagre.Business.Services.Application.Magazzino;
 global using GestioneSagre.DataAccess.Models.Services.Infrastructure;
 global using GestioneSagre.Models.InputModels.Feste;
 global using GestioneSagre.Models.InputModels.Logo;

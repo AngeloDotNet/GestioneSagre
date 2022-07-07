@@ -1,5 +1,7 @@
 ﻿global using GestioneSagre.DataAccess.Models.Services.Interfaces;
 global using GestioneSagre.Domain.Entities;
+global using GestioneSagre.Domain.Enums;
+global using GestioneSagre.Domain.ValueObjects;
 global using GestioneSagre.Models.InputModels.Feste;
 global using GestioneSagre.Models.InputModels.Logo;
 global using GestioneSagre.Models.InputModels.Versioni;
