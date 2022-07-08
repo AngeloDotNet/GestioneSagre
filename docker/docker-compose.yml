@@ -13,6 +13,19 @@ services:
             - 5091:5001
         networks:
             - lan-network
+    
+    gestionesagre-api:
+        container_name: gestionesagre-api
+        build:
+            context: .
+            dockerfile: webapi/Dockerfile
+        restart: always
+        volumes:
+            - /docker/gestionesagre/webapi:/app
+        ports:
+            - 5092:5001
+        networks:
+            - lan-network
 
     gestionesagre-db:
         container_name: gestionesagre-db
