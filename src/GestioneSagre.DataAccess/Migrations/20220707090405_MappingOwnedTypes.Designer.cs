@@ -3,6 +3,7 @@ using GestioneSagre.DataAccess.Models.Services.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GestioneSagre.DataAccess.Migrations
 {
     [DbContext(typeof(GestioneSagreDbContext))]
-    partial class GestioneSagreDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220707090405_MappingOwnedTypes")]
+    partial class MappingOwnedTypes
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -35,7 +35,28 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestioneSagre.Domain", "src
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestioneSagre.Web.PrivateAPI", "src\GestioneSagre.Web.PrivateAPI\GestioneSagre.Web.PrivateAPI.csproj", "{2995A4CA-EF2E-4CB8-A539-61E87F40337C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestioneSagre.Web.Client.Services", "src\GestioneSagre.Web.Client.Services\GestioneSagre.Web.Client.Services.csproj", "{48812D7F-4C71-4DC1-85B6-F7261E683F9E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestioneSagre.Web.Client.Services", "src\GestioneSagre.Web.Client.Services\GestioneSagre.Web.Client.Services.csproj", "{48812D7F-4C71-4DC1-85B6-F7261E683F9E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docker", "docker", "{524D69E6-3D10-4603-8611-7C48D3EE64FB}"
+	ProjectSection(SolutionItems) = preProject
+		docker\docker-compose.yml = docker\docker-compose.yml
+		docker\applicazione\Dockerfile = docker\applicazione\Dockerfile
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "applicazione", "applicazione", "{5A5DEBD8-297B-4E6B-B556-B5D06E23693A}"
+	ProjectSection(SolutionItems) = preProject
+		docker\applicazione\Dockerfile = docker\applicazione\Dockerfile
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "webapi", "webapi", "{086DB01C-2FD8-477C-8ED4-7946B69411DA}"
+	ProjectSection(SolutionItems) = preProject
+		docker\webapi\Dockerfile = docker\webapi\Dockerfile
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "database", "database", "{7D979C95-D7F0-413A-920F-76A9DF8F07A5}"
+	ProjectSection(SolutionItems) = preProject
+		docker\database\Dockerfile = docker\database\Dockerfile
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -170,6 +191,9 @@ Global
 		{211E3133-36F9-4A18-A489-1B07A4305C13} = {F860949A-038A-488D-B66C-795CDDFF3257}
 		{2995A4CA-EF2E-4CB8-A539-61E87F40337C} = {F860949A-038A-488D-B66C-795CDDFF3257}
 		{48812D7F-4C71-4DC1-85B6-F7261E683F9E} = {F860949A-038A-488D-B66C-795CDDFF3257}
+		{5A5DEBD8-297B-4E6B-B556-B5D06E23693A} = {524D69E6-3D10-4603-8611-7C48D3EE64FB}
+		{086DB01C-2FD8-477C-8ED4-7946B69411DA} = {524D69E6-3D10-4603-8611-7C48D3EE64FB}
+		{7D979C95-D7F0-413A-920F-76A9DF8F07A5} = {524D69E6-3D10-4603-8611-7C48D3EE64FB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7BD5E297-2FAD-43F4-8AE4-E6BA63347487}
