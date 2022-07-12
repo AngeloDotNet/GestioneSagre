@@ -4,6 +4,13 @@ Free software that allows the web management of festivals and village festivals 
 ![image](https://user-images.githubusercontent.com/49655304/177003851-6ca5cae8-240a-4a19-82bd-20f333a6f407.png)
 
 
+## IMPORTANT MESSAGE
+
+This project is no longer developed as the logic with which the open source product will be developed has been changed.
+
+The new repository can be reached at this link: https://github.com/GestioneSagre
+
+<!--
 ## Features
 
 - No server required
@@ -54,12 +61,13 @@ Start the server
 
 ## Contributing
 Contributions and/or suggestions are always welcome.
-
+-->
 
 ## Badges
 
 [![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
 
-[![Lint Code Base](https://github.com/AngeloDotNet/GestioneSagre/actions/workflows/linter.yml/badge.svg)](https://github.com/AngeloDotNet/GestioneSagre/actions/workflows/linter.yml)
+<!-- [![Lint Code Base](https://github.com/AngeloDotNet/GestioneSagre/actions/workflows/linter.yml/badge.svg)](https://github.com/AngeloDotNet/GestioneSagre/actions/workflows/linter.yml)
 
 [![Publish on GitHub](https://github.com/AngeloDotNet/GestioneSagre/actions/workflows/publish.yml/badge.svg)](https://github.com/AngeloDotNet/GestioneSagre/actions/workflows/publish.yml)
+-->
