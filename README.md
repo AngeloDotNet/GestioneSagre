@@ -1,14 +1,14 @@
+## ATTENTION!
+
+This repository is no longer maintained and is replaced by <a href="https://github.com/GestioneSagre">GestioneSagre v2</a> 
+
+
 # GestioneSagre
 Free software that allows the web management of festivals and village festivals written in C# and Blazor Wasm
 
+
 ![image](https://user-images.githubusercontent.com/49655304/177003851-6ca5cae8-240a-4a19-82bd-20f333a6f407.png)
 
-
-## IMPORTANT MESSAGE
-
-This project is no longer developed as the logic with which the open source product will be developed has been changed.
-
-The new repository can be reached at this link: https://github.com/GestioneSagre
 
 <!--
 ## Features
