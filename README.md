@@ -1,6 +1,7 @@
 ## ATTENTION!
 
-This repository is no longer maintained and is replaced by <a href="https://github.com/GestioneSagre">GestioneSagre v2</a> 
+This repository is no longer maintained and is replaced by <a href="https://github.com/GestioneSagre">GestioneSagre v2</a>. <br />
+The issues that remained open in this project have been moved and will be managed in the new solution.
 
 
 # GestioneSagre
